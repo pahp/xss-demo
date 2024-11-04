@@ -12,6 +12,9 @@
     <!-- Header -->
     <header>
       <h1>XSS Demo</h1>
+		{% if name %}
+			<p>Welcome, {{ name }}!</p>
+		{% endif %}
       <p>Read, search and post comments</p>
     </header>
 

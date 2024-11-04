@@ -6,6 +6,11 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+
+    name = ''
+    if request.method == 'GET':
+        name = request.args.get('name','')
+
     if request.method == 'POST':
         db.add_comment(request.form['comment'])
 
@@ -14,5 +19,6 @@ def index():
     comments = db.get_comments(search_query)
 
     return render_template('index.html',
+                           name=name,
                            comments=comments,
                            search_query=search_query)
