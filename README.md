@@ -16,6 +16,14 @@ Less than 30 lines of Python + 40 lines HTML template.
 As you started the flask app in development mode, any source changes should apply immediately so you can just refresh
 the page. If you want to clear the database, just delete the `database.db` file that is (re-)created on first use.
 
+If you are running flask directly and want to run it on all your IP addresses so that others on your LAN can access it (e.g., for a classroom demo -- please do not use this for production on the Internet!), you can do:
+
+```
+$ flask run --host=0.0.0.0
+```
+
+Again, this should only be used temporarily and in a relatively safe environment.
+
 # Making it vulnerable
 
 To demonstrate XSS flaws you can change 
